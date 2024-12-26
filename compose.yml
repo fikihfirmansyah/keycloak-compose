@@ -23,7 +23,7 @@ services:
 
   keycloak:
     image: quay.io/keycloak/keycloak:${KC_VERSION}
-    command: ["start-dev", "--import-realm"]
+    command: ["start-dev"]
     restart: unless-stopped
     environment:
       KC_DB: postgres
@@ -32,7 +32,6 @@ services:
       KC_DB_URL: "jdbc:postgresql://postgres:5432/keycloak"
       KC_METRICS_ENABLED: "true"
       KC_LOG_LEVEL: ${KC_LOG_LEVEL}
-      KC_REALM_NAME: ${KC_REALM_NAME}
       KC_BOOTSTRAP_ADMIN_USERNAME: ${KEYCLOAK_ADMIN}
       KC_BOOTSTRAP_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
       GF_URL: ${GF_HOSTNAME}:${GF_SERVER_HTTP_PORT}
