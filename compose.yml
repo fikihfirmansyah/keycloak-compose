@@ -39,8 +39,6 @@ services:
       GF_ADMIN_PASSWORD: ${GF_ADMIN_PASSWORD}
     ports:
       - ${KC_PORT}:8080
-    volumes:
-      - ./keycloak/realm.json:/opt/keycloak/data/import/realm.json:ro
     logging: *logging
 
   prometheus:
